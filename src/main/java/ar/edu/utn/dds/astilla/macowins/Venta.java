@@ -40,6 +40,10 @@ public class Venta {
 	public double ganancia(){
 		return prenda.precioFinal() * cantidad;
 	}
+
+	public boolean coincideFecha(long fecha){
+		return fecha == this.fechaVenta;
+	}
 	
 
 }

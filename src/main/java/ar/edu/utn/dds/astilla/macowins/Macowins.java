@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Macowins {
 
-static ArrayList<Venta> ventas= new ArrayList<Venta>() ;
+static List<Venta> ventas= new ArrayList<Venta>() ;
 	
 	public static void main(String[] args) {
 		
@@ -22,15 +22,7 @@ static ArrayList<Venta> ventas= new ArrayList<Venta>() ;
 	}
 	
 	public static int procesarVentasDelDia(long fecha){
-		
-		int gananciaEnElDia = 0;
-		
-		for (Venta unaVenta : ventas) {
-			if(unaVenta.getFechaVenta()==fecha){
-			gananciaEnElDia+= unaVenta.ganancia();
-		}
-		}
-		return gananciaEnElDia;
+		return ventas.stream().filter(venta -> venta.coincideFecha(fecha)).mapToDouble(venta -> venta.ganancia()).sum();
 	}
 	
 
