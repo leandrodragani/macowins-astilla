@@ -1,8 +1,7 @@
 package ar.edu.utn.dds.astilla.macowins;
 
-public abstract class Origen {
+public interface Origen {
 	
-	protected abstract boolean esImportada();
-
+	public double multiplicadorPorProcedencia();	
 
 }
