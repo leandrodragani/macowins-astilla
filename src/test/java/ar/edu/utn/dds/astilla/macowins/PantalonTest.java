@@ -10,10 +10,12 @@ import junit.framework.Assert;
 public class PantalonTest {
 	
 	private Pantalon unPantalon;
+	private Saco unSaco;
 	
 	@Before
 	public void init() {
 		unPantalon = new Pantalon(new Internacional());
+		unSaco = new Saco(new Internacional());
 	}
 	
 	@Test
@@ -21,9 +23,9 @@ public class PantalonTest {
 		Assert.assertEquals(250, unPantalon.precioBase());
 	}
 	
+	@Test
+	public void precioFinalEsSeisNoventa() {
+		Assert.assertEquals(780.0, unSaco.precioFinal());
+	}
 	
-
-	
-	
-
 }
