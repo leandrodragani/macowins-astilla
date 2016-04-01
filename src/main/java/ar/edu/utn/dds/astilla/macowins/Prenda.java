@@ -11,11 +11,7 @@ public abstract class Prenda {
 	}
 	
 	public double precioFinal(){
-		if(origen.esImportada()){
-			return calculo() * 0.3;
-		}else{
-			return calculo();
-		}
+		return calculo() * origen.multiplicadorPorProcedencia();
 	}
 	
 	private double calculo(){
@@ -25,3 +21,4 @@ public abstract class Prenda {
 	protected abstract int precioBase();
 
 }
+

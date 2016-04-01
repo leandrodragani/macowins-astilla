@@ -1,12 +1,8 @@
 package ar.edu.utn.dds.astilla.macowins;
 
-public class Nacional extends Origen {
-
-	@Override
-	protected boolean esImportada() {
-		return false;
+public class Nacional implements Origen{
+	
+	public double multiplicadorPorProcedencia() {
+		return 1;
 	}
-	
-	
-
 }
