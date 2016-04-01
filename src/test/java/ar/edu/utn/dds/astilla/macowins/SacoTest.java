@@ -1,11 +1,11 @@
 package ar.edu.utn.dds.astilla.macowins;
 
+
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Assert;
 
-import junit.framework.Assert;
 
-@SuppressWarnings("deprecation")
 public class SacoTest {
 	
 private Saco unSaco;
