@@ -1,24 +1,27 @@
 package ar.edu.utn.dds.astilla.macowins;
 
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
 
-
+@SuppressWarnings("deprecation")
 public class SacoTest {
 	
-private Saco unSaco;
+	private Saco unSaco;
+	private Macowins unNegocio;
 	
 	@Before
 	public void init() {	
 		unSaco = new Saco(new Internacional());		
+		unNegocio = new Macowins();
 	}	
 
 	
 	@Test
 	public void precioFinalEsSeisNoventa() {
-		Assert.assertEquals(780.0, unSaco.precioFinal());
+		assertEquals(780.0, unSaco.precioFinal(), 0);
 	}
 
 }
