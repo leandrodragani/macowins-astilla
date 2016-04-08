@@ -11,13 +11,15 @@ public class PantalonTest {
 
 	@Before
 	public void init() {
-		unPantalon = new Pantalon(new Internacional());
+		unPantalon = new Pantalon(new Internacional(), new Armani(), 20 );
 
 	}
 
 	@Test
-	public void precioBaseEsDoscientosCincuenta() {
-		assertEquals(250, unPantalon.precioBase());
+	public void precioBaseEsDoscientosSetenta() {
+		assertEquals(270, unPantalon.precioBase());
+		
+		
 	}
 
 }

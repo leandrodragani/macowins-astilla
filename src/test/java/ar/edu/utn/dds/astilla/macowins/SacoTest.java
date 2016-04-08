@@ -11,17 +11,20 @@ public class SacoTest {
 	
 	private Saco unSaco;
 
+
 	
 	@Before
 	public void init() {	
-		unSaco = new Saco(new Internacional());		
+
+		unSaco = new Saco(new Internacional(), new Armani(),5);
+		
 
 	}	
 
 	
 	@Test
 	public void precioFinalEsSeisNoventa() {
-		assertEquals(780.0, unSaco.precioFinal(), 0);
+		assertEquals(1072.5, unSaco.precioFinal(), 0);
 	}
 
 }

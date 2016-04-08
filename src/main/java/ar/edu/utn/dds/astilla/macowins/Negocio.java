@@ -3,10 +3,18 @@ package ar.edu.utn.dds.astilla.macowins;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Macowins {
+public class Negocio {
 
 	private List<Venta> ventas= new ArrayList<Venta>();
 	
+	public List<Venta> getVentas() {
+		return ventas;
+	}
+
+	public void setVentas(List<Venta> ventas) {
+		this.ventas = ventas;
+	}
+
 	public double procesarVentasDelDia(long fecha){
 		return ventas.stream().filter(venta -> venta.coincideFecha(fecha)).mapToDouble(venta -> venta.ganancia()).sum();
 	}
@@ -15,4 +23,6 @@ public class Macowins {
 		ventas.add(new Venta(prenda,cantidad,fecha));
 	}
 
+	
+	
 }

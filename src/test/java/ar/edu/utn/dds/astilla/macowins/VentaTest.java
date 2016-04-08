@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class VentaTest {
 
 	private Saco unSaco;
-	private Macowins unMaco;
+	private Negocio unMaco;
 	private Pantalon unPantalon;
 	private Camisa unaCamisa;
 	
@@ -19,11 +19,11 @@ public class VentaTest {
 
 	@Before
 	public void init() {
-		unSaco = new Saco(new Internacional());
-		unaCamisa = new Camisa(new Nacional());
-		unPantalon = new Pantalon(new Nacional());
-		unMaco = new Macowins();	
 		
+		unSaco = new Saco(new Internacional(), new Armani (), 5);
+		unaCamisa = new Camisa(new Nacional(), new Sarkany(), 0);
+		unPantalon = new Pantalon(new Nacional(), new Armani(), 10);
+		unMaco = new Negocio();		
 		
 		unMaco.vender(unSaco, 1, 10);
 		unMaco.vender(unaCamisa, 2, 10);
@@ -31,12 +31,19 @@ public class VentaTest {
 	
 		}
 	
+	@Test
+	public void seRegistranTresVentas() {
+		assertEquals(3, unMaco.getVentas().size(),0);
+		}
+	
+		
 
 	@Test
-	public void laVentaEsSieteMilOchocientos() {
-		assertEquals(1780.00, unMaco.procesarVentasDelDia(10), 10);
+	 public void laVentaEsSieteMilOchocientos() {
+	assertEquals(2072.07, unMaco.procesarVentasDelDia(10), 10);
 
 
 	}
-
 }
+
+
